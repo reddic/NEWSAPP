@@ -30,6 +30,9 @@ function displayNews(articles) {
         const title = document.createElement("h3");
         title.textContent = article.title;
 
+        const publishedAt = document.createElement("p");
+        publishedAt.textContent = formatDate(article.publishedAt);
+
         const description = document.createElement("p");
         description.textContent = article.description;
 
@@ -45,6 +48,7 @@ function displayNews(articles) {
 
         
         newsCard.appendChild(title);
+        newsCard.appendChild(publishedAt);
         newsCard.appendChild(description);
         newsCard.appendChild(sources);  // Corrected variable name
         newsCard.appendChild(readMoreButton);
@@ -52,3 +56,14 @@ function displayNews(articles) {
         newsContainer.appendChild(newsCard);
     });
 }
+function formatDate(originalDate) {
+    const date = new Date(originalDate);
+
+    // Atur format tanggal yang diinginkan (contoh: "DD MMM YYYY")
+    const options = { day: 'numeric', month: 'short', year: 'numeric' };
+
+    return date.toLocaleDateString('en-US', options);
+}
+
+
+
