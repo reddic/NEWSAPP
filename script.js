@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function displayNews(articles) {
     const newsContainer = document.getElementById("news-container");
 
-    // Display news in grid or card
+    
     articles.forEach(article => {
         const newsCard = document.createElement("div");
         newsCard.classList.add("news-card");
@@ -40,9 +40,6 @@ function displayNews(articles) {
         const sources = document.createElement("p");  // Corrected variable name
         sources.textContent = `Source: ${article.source.name}`;
 
-        // const link = document.createElement("a");
-        // link.href = article.url;
-        // link.textContent = "Read more";
 
         const readMoreButton = document.createElement("button");
         readMoreButton.textContent = "Read more";
