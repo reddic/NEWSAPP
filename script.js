@@ -1,15 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const apiKey = '2a981b6864814c5f8d6de418993214ac'; // Replace with your News API key
-    const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
 
-    // Make sure to use the correct version of Axios
     axios.get("https://newsapi.org/v2/everything?q=stock&apiKey=2a981b6864814c5f8d6de418993214ac")
         .then(response => {
             const articles = response.data.articles;
             displayNews(articles);
         })
         .catch(error => console.error("Error fetching data:", error));
-});
+
 
 function displayNews(articles) {
     const newsContainer = document.getElementById("news-container");
